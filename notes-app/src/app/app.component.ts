@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Notes App';
+  private currentTab;
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.currentTab = 'home';
+  }
+
+  isActive(tabName: string) {
+    return tabName === this.currentTab;
+  }
+
+  goToTab(tabName: string) {
+    this.currentTab = tabName;
+  }
 }

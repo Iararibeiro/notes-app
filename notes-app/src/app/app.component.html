@@ -1,2 +1,24 @@
-<!--<router-outlet></router-outlet>-->
-<app-home></app-home>
+<div class="side-menu">
+  <div class="title">
+   <!-- icon and app title -->
+   <p>Note App</p>
+  </div>
+  <div class="menu">
+    <!-- Menu options/tabs, home, my tasks, my projects-->
+    <ul>
+        <li [ngClass]="isActive('home') ? 'home active' : 'home'" (click)="goToTab('home')">
+          <a routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+        <li [ngClass]="isActive('tasks') ? 'tasks active' : 'tasks'" (click)="goToTab('tasks')">
+          <a routerLink="/tasks" routerLinkActive="active">My tasks</a>
+        </li>
+        <li [ngClass]="isActive('projects') ? 'projects active' : 'projects'" (click)="goToTab('projects')">
+          <a routerLink="/projects" routerLinkActive="active">My projects</a>
+        </li>
+    </ul>
+  </div>
+  <div class="footer">
+
+  </div>
+</div>
+<router-outlet></router-outlet>
