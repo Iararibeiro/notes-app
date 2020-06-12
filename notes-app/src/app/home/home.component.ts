@@ -6,20 +6,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  private currentTab;
+  greeting: string;
+  date: string;
+
+  private months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.currentTab = 'home';
+    this.setGreeting();
+    this.setDate();
   }
 
-  isActive(tabName: string) {
-    return tabName === this.currentTab;
+  /* Set the greeting on the home page */
+  setGreeting() {
+    let currentDate = new Date();
+    let hours = currentDate.getHours();
+
+    if (hours < 12) {
+      this.greeting = "Good morning!";
+    } else if (hours > 12 && hours < 18) {
+      this.greeting = "Good afternoon!";
+    } else {
+      this.greeting = "Good evening!";
+    }
   }
 
-  goToTab(tabName: string) {
-    this.currentTab = tabName;
+  /* Set the date under the greeting */
+  setDate() {
+    let currentDate = new Date();
+    let month = this.months[currentDate.getMonth()];
+    this.date = `${currentDate.getDate()} ${month} ${currentDate.getFullYear()}`;
   }
-
 }
