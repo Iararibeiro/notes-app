@@ -12,3 +12,23 @@ html, body {
   height: 100%;
   float: left;
 }
+
+.container-page {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+
+  .greeting {
+    font-size: 35px;
+    text-transform: uppercase;
+    padding: 20px;
+
+    p {
+      margin: 0px;
+    }
+
+    .date {
+      font-size: 16px;
+      margin: 11px 2px;
+    }
+  }
+}
