@@ -3,4 +3,13 @@
     <p>My Tasks</p>
     <div class="separator"></div>
   </div>
+  <div class="date">
+    {{ date }}
+  </div>
+  <ng-container *ngIf="calendarView">
+
+  </ng-container>
+  <ng-container *ngIf="!calendarView">
+
+  </ng-container>
 </div>

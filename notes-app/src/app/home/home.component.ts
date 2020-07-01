@@ -11,6 +11,9 @@ export class HomeComponent implements OnInit {
 
   private months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
+  displayTasks = false;
+  displayProjects = false;
+  
   constructor() { }
 
   ngOnInit(): void {

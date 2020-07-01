@@ -4,4 +4,28 @@
     <div class="separator"></div>
     <p class="date">{{ date }}</p>
   </div>
+  <div class="stats">
+  </div>
+  <div class="ongoing">
+    <h2>On going tasks</h2>
+    <ng-container *ngIf="displayTasks">
+    </ng-container>
+    <ng-container *ngIf="!displayTasks">
+      <div class="empty-notice">
+
+      </div>
+    </ng-container>
+    <div class="separator-section"></div>
+  </div>
+  <div class="projects">
+    <h2>Projects</h2>
+    <ng-container *ngIf="displayProjects">
+    </ng-container>
+    <ng-container *ngIf="!displayProjects">
+      <div class="empty-notice">
+
+      </div>
+    </ng-container>
+    <div class="separator-section"></div>
+  </div>
 </div>
