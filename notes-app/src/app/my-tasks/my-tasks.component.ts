@@ -6,21 +6,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-tasks.component.scss']
 })
 export class MyTasksComponent implements OnInit {
-  calendarView: boolean = true;
+  calendarView: boolean = false;
   date: string;
 
-  private months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  dayHours = [];
+
+  private days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
   constructor() { }
 
   ngOnInit(): void {
     this.setDate();
+    this.dayHours = Array(5).fill().map((x,i)=>(i + 7));
   }
 
   /* Set the date under the greeting */
   setDate() {
     let currentDate = new Date();
-    let month = this.months[currentDate.getMonth()];
-    this.date = `${currentDate.getDate()} ${month} ${currentDate.getFullYear()}`;
+    let dayOfWeek = this.days[currentDate.getDay()];
+    this.date = `${dayOfWeek} ${currentDate.getDate()}`;
+  }
+
+  setTimeFrame() {
+
   }
 }
