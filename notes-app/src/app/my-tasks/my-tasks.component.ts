@@ -27,7 +27,6 @@ export class MyTasksComponent implements OnInit, AfterViewInit {
   setScreenPosition() {
     let currentDate = new Date();
     let elementId = `#object-${currentDate.getHours()}`;
-    console.log(elementId);
     const element = document.querySelector(elementId);
     element.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }

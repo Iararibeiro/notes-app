@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,17 @@ export class AppComponent {
   title = 'Notes App';
   private currentTab;
 
-  constructor() { }
+  constructor(location: Location, router: Router) {
+    router.events.subscribe((val) => {
+      if(location.path() === '/tasks'){
+        this.currentTab = 'tasks';
+      } else if (location.path() === '/projects'){
+        this.currentTab = 'projects';
+      } else {
+        this.currentTab = 'home';
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.currentTab = 'home';
