@@ -13,10 +13,12 @@
   background-color: #f8f8f8;
   margin: 20px;
   border-radius: 5px;
+  overflow-y: scroll;
+  height: calc(100% - 179px);
 
   .hour {
     padding: 1px 0px;
-    border-bottom: 1px solid #bfbfbf;
+    //border-bottom: 1px solid #bfbfbf;
 
     .sign {
       width: 5px;

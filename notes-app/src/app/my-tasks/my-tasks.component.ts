@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-my-tasks',
   templateUrl: './my-tasks.component.html',
   styleUrls: ['./my-tasks.component.scss']
 })
-export class MyTasksComponent implements OnInit {
+export class MyTasksComponent implements OnInit, AfterViewInit {
   calendarView: boolean = false;
   date: string;
 
@@ -17,7 +17,19 @@ export class MyTasksComponent implements OnInit {
 
   ngOnInit(): void {
     this.setDate();
-    this.dayHours = Array(5).fill().map((x,i)=>(i + 7));
+    this.dayHours = Array(24).fill(0).map((x,i)=>(i));
+  }
+
+  ngAfterViewInit() {
+    this.setScreenPosition();
+  }
+
+  setScreenPosition() {
+    let currentDate = new Date();
+    let elementId = `#object-${currentDate.getHours()}`;
+    console.log(elementId);
+    const element = document.querySelector(elementId);
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   /* Set the date under the greeting */

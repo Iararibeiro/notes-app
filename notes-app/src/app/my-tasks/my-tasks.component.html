@@ -16,8 +16,14 @@
   <ng-container *ngIf="!calendarView">
     <div class="schedule">
       <div *ngFor="let hour of dayHours" class="hour">
-        <div class="box">
-            <div class="sign"></div><p>{{ hour }}</p>
+        <div class="box" id="{{ 'object-' + hour }}">
+            <!--<div class="sign"></div>-->
+            <ng-container *ngIf="hour < 10">
+              <p>0{{ hour }}:00</p>
+            </ng-container>
+            <ng-container *ngIf="hour >= 10">
+              <p>{{ hour }}:00</p>
+            </ng-container>
         </div>
       </div>
     </div>
