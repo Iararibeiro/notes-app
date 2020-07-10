@@ -3,3 +3,29 @@
   height: 3px;
   background-color: #bada55;
 }
+
+.empty-card {
+  margin: 0 auto;
+  width: 350px;
+  padding: 30px;
+  background-color: #59595914;
+  border-radius: 10px;
+
+  .card-header {
+    p {
+      text-transform: uppercase;
+      margin: 0;
+      font-weight: bold;
+      font-size: 25px;
+    }
+  }
+
+  .card-content {
+    p {
+      font-size: 14px;
+      opacity: 0.6;
+    }
+  }
+
+  .card-actions { }
+}

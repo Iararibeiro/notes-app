@@ -3,4 +3,23 @@
     <p>My Projects</p>
     <div class="separator"></div>
   </div>
+  <div class="container">
+    <ng-container *ngIf="projects.length === 0">
+      <div class="empty-card">
+        <div class="card-header">
+          <p>Oh no!</p>
+        </div>
+        <div class="card-content">
+          <p>
+            Looks like you haven't created any projects.
+          </p>
+        </div>
+        <div class="card-actions">
+          <button class="btn-green" type="button" name="button">Create a new project</button>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="projects.length > 0">
+    </ng-container>
+  </div>
 </div>
