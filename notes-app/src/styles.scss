@@ -53,21 +53,41 @@ h2 {
 }
 
 .btn-green {
-	background-color: #77b55a;
+	background-color: #a7c44c;
 	border-radius: 7px;
 	display: inline-block;
 	cursor: pointer;
 	color: #ffffff;
 	font-family: 'Montserrat', sans-serif;
-	font-size: 17px;
-	padding: 16px 31px;
+	font-size: 14px;
+	padding: 10px 20px;
 	text-transform: uppercase;
   border: none;
 }
 .btn-green:hover {
-	background-color: #72b352;
+	background-color: #94ae44;
 }
 .btn-green:active {
+	position: relative;
+	top:1px;
+}
+
+.btn-pink {
+	background-color: #fb7eab;
+	border-radius: 7px;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	padding: 10px 20px;
+	text-transform: uppercase;
+  border: none;
+}
+.btn-pink:hover {
+	background-color: #e17199;
+}
+.btn-pink:active {
 	position: relative;
 	top:1px;
 }

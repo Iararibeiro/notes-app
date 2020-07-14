@@ -4,13 +4,14 @@
     <div class="separator"></div>
   </div>
   <div class="date">
-    {{ date }}
+    <p>{{ date }}</p>
+    <div class="new-task">
+      <button class="btn-pink" type="button" name="button">Add a task</button>
+    </div>
   </div>
   <ng-container *ngIf="calendarView">
     <div class="calendar">
       <h2>Today</h2>
-      <div class="">
-      </div>
     </div>
   </ng-container>
   <ng-container *ngIf="!calendarView">

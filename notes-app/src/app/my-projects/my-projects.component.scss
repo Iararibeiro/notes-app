@@ -5,13 +5,16 @@
 }
 
 .empty-card {
-  margin: 0 auto;
+  margin: 20% auto;
   width: 350px;
-  padding: 30px;
-  background-color: #59595914;
+  //padding: 30px;
+  //background-color: #59595914;
   border-radius: 10px;
 
   .card-header {
+    margin: 20px 122px;
+    width: 96px;
+
     p {
       text-transform: uppercase;
       margin: 0;
@@ -20,16 +23,20 @@
     }
 
     img {
-      width: 30px;
+      width: 50px;
     }
   }
 
   .card-content {
+    margin-bottom: 60px;
     p {
+      text-align: center;
       font-size: 14px;
       opacity: 0.6;
     }
   }
 
-  .card-actions { }
+  .card-actions {
+    margin: auto 65px;
+  }
 }
