@@ -91,3 +91,23 @@ h2 {
 	position: relative;
 	top:1px;
 }
+
+.btn-blue {
+	background-color: #7eabfb;
+	border-radius: 7px;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	padding: 10px 20px;
+	text-transform: uppercase;
+  border: none;
+}
+.btn-blue:hover {
+	background-color: #7199e1;
+}
+.btn-blue:active {
+	position: relative;
+	top:1px;
+}
