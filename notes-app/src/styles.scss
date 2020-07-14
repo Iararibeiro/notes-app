@@ -1,10 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat');
 
+// Colors
+$bg-color: #efefef;
+$dot-color: #acacac;
+
+// Dimensions
+$dot-size: 1px;
+$dot-space: 22px;
+
 html, body {
   margin: 0;
   height: 100%;
-  background-color: #efefef;
+  background:
+    linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
+    linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+    $dot-color;
+  background-size: $dot-space $dot-space;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -50,6 +62,7 @@ h2 {
 	font-size: 17px;
 	padding: 16px 31px;
 	text-transform: uppercase;
+  border: none;
 }
 .btn-green:hover {
 	background-color: #72b352;
