@@ -10,8 +10,9 @@ export class MyTasksComponent implements OnInit, AfterViewInit {
   date: string;
 
   dayHours = [];
-
   private days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  tasks = [];
 
   constructor() { }
 

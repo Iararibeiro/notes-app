@@ -11,21 +11,15 @@
     <ng-container *ngIf="displayTasks">
     </ng-container>
     <ng-container *ngIf="!displayTasks">
-      <div class="empty-notice">
-
-      </div>
+      <app-empty-section [typeNotice]="'task'" [size]="'small'"></app-empty-section>
     </ng-container>
-    <div class="separator-section"></div>
   </div>
   <div class="projects">
     <h2>Projects</h2>
     <ng-container *ngIf="displayProjects">
     </ng-container>
     <ng-container *ngIf="!displayProjects">
-      <div class="empty-notice">
-
-      </div>
+      <app-empty-section [typeNotice]="'project'" [size]="'small'"></app-empty-section>
     </ng-container>
-    <div class="separator-section"></div>
   </div>
 </div>

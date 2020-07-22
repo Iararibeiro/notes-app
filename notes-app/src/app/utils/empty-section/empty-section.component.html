@@ -1,14 +1,27 @@
-<div class="empty-card">
-  <div class="card-header">
-    <img src="./assets/report.svg" alt="">
-    <p>Oh no!</p>
+<ng-container *ngIf="size === 'big'">
+  <div class="empty-card big">
+    <div class="card-header">
+      <img src="./assets/report.svg" alt="">
+      <p>Oh no!</p>
+    </div>
+    <div class="card-content">
+      <p>
+        Looks like you haven't created any {{ label }}.
+      </p>
+    </div>
+    <div class="card-actions">
+      <button [ngClass]="buttonClass" type="button" name="button">{{ buttonText }}</button>
+    </div>
   </div>
-  <div class="card-content">
-    <p>
-      Looks like you haven't created any {{ label }}.
-    </p>
+</ng-container>
+<ng-container *ngIf="size === 'small'">
+  <div class="empty-card small">
+    <div class="card-content">
+      <p class="title"> Create a new {{ typeNotice }}</p>
+      <p class="subtitle"> You can create a new {{ typeNotice }} here </p>
+    </div>
+    <div class="action">
+      <button [ngClass]="getSmallButtonClass()" type="button" name="button">+</button>
+    </div>
   </div>
-  <div class="card-actions">
-    <button class="btn-green" type="button" name="button">{{ buttonText }}</button>
-  </div>
-</div>
+</ng-container>

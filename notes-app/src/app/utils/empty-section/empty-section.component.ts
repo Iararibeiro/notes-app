@@ -8,7 +8,10 @@ import { noticeType } from '../../types';
 })
 export class EmptySectionComponent implements OnInit {
   @Input() typeNotice: string;
+  @Input() size: string;
+
   buttonText = 'Create';
+  buttonClass = 'btn-green';
   label = '';
 
   constructor() { }
@@ -20,7 +23,14 @@ export class EmptySectionComponent implements OnInit {
     } else {
       this.label = "tasks";
       this.buttonText = "Create a new task";
+      this.buttonClass = 'btn-pink';
     }
   }
 
+  getSmallButtonClass() {
+    if (this.typeNotice === 'project') {
+      return "btn-green sm";
+    }
+    return "btn-pink sm";
+  }
 }

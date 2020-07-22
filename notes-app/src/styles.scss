@@ -25,7 +25,6 @@ h2 {
 }
 
 .container {
-  height: 100%;
   width: 100%;
   float: left;
 }
@@ -63,6 +62,12 @@ h2 {
 	padding: 10px 20px;
 	text-transform: uppercase;
   border: none;
+
+  &.sm {
+    border-radius: 50%;
+    padding: 5px 15px;
+    font-size: 29px;
+  }
 }
 .btn-green:hover {
 	background-color: #94ae44;
@@ -83,6 +88,12 @@ h2 {
 	padding: 10px 20px;
 	text-transform: uppercase;
   border: none;
+
+  &.sm {
+    border-radius: 50%;
+    padding: 5px 15px;
+    font-size: 29px;
+  }
 }
 .btn-pink:hover {
 	background-color: #e17199;
@@ -103,6 +114,12 @@ h2 {
 	padding: 10px 20px;
 	text-transform: uppercase;
   border: none;
+
+  &.sm {
+    border-radius: 50%;
+    padding: 5px 15px;
+    font-size: 29px;
+  }
 }
 .btn-blue:hover {
 	background-color: #7199e1;

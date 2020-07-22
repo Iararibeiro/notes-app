@@ -5,16 +5,16 @@
   </div>
   <div class="date">
     <p>{{ date }}</p>
-    <div class="new-task">
+    <div class="new-task" *ngIf="tasks.length > 0">
       <button class="btn-pink" type="button" name="button">Add a task</button>
     </div>
   </div>
-  <ng-container *ngIf="calendarView">
+  <ng-container *ngIf="calendarView && tasks.length > 0">
     <div class="calendar">
       <h2>Today</h2>
     </div>
   </ng-container>
-  <ng-container *ngIf="!calendarView">
+  <ng-container *ngIf="!calendarView && tasks.length > 0">
     <div class="schedule">
       <div *ngFor="let hour of dayHours" class="hour">
         <div class="box" id="{{ 'object-' + hour }}">
@@ -28,5 +28,8 @@
         </div>
       </div>
     </div>
+  </ng-container>
+  <ng-container *ngIf="tasks.length === 0">
+    <app-empty-section [typeNotice]="'task'" [size]="'big'"></app-empty-section>
   </ng-container>
 </div>
