@@ -1,4 +1,5 @@
 import express = require('express');
+import * as logger from './service/log-service';
 
 const app: express.Application = express();
 
@@ -9,5 +10,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, function () {
-    console.log(`Running server on port ${port}`);
+  console.log(`Running server on port ${port}`);
+  logger.logEvent({type: 'info', message: `Running server on port ${port}`, date: new Date()});
 })
