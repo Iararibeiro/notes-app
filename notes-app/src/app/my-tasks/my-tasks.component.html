@@ -3,9 +3,9 @@
     <p>My Tasks</p>
     <div class="separator"></div>
   </div>
-  <div class="date">
+  <div class="date" *ngIf="tasks.length > 0">
     <p>{{ date }}</p>
-    <div class="new-task" *ngIf="tasks.length > 0">
+    <div class="new-task">
       <button class="btn-pink" type="button" name="button">Add a task</button>
     </div>
   </div>
