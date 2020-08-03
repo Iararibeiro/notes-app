@@ -9,6 +9,9 @@ import { MyProjectsComponent } from './my-projects/my-projects.component';
 import { EmptySectionComponent } from './utils/empty-section/empty-section.component';
 import { NewTaskComponent } from './modals/new-task/new-task.component';
 import { NewProjectComponent } from './modals/new-project/new-project.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { NewProjectComponent } from './modals/new-project/new-project.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

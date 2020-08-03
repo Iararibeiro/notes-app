@@ -10,7 +10,7 @@
       </p>
     </div>
     <div class="card-actions">
-      <button [ngClass]="buttonClass" type="button" name="button">{{ buttonText }}</button>
+      <button [ngClass]="buttonClass" type="button" name="button" (click)="onClick()">{{ buttonText }}</button>
     </div>
   </div>
 </ng-container>
@@ -21,7 +21,7 @@
       <p class="subtitle"> You can create a new {{ typeNotice }} here </p>
     </div>
     <div class="action">
-      <button [ngClass]="getSmallButtonClass()" type="button" name="button">+</button>
+      <button [ngClass]="getSmallButtonClass()" type="button" name="button" (click)="onClick()">+</button>
     </div>
   </div>
 </ng-container>

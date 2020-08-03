@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { noticeType } from '../../types';
+
+import { NewProjectComponent } from '../../modals/new-project/new-project.component';
+import { NewTaskComponent } from '../../modals/new-task/new-task.component';
 
 @Component({
   selector: 'app-empty-section',
@@ -14,7 +18,7 @@ export class EmptySectionComponent implements OnInit {
   buttonClass = 'btn-green';
   label = '';
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
     if (this.typeNotice === 'project') {
@@ -32,5 +36,13 @@ export class EmptySectionComponent implements OnInit {
       return "btn-green sm";
     }
     return "btn-pink sm";
+  }
+
+  onClick() {
+    if (this.typeNotice === 'project') {
+      const dialogNewProjectRef = this.dialog.open(NewProjectComponent, { width: '250px' });
+    } else {
+      const dialogNewTaskRef = this.dialog.open(NewTaskComponent, { width: '250px' });
+    }
   }
 }
