@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { MyTasksComponent } from './my-tasks/my-tasks.component';
 import { MyProjectsComponent } from './my-projects/my-projects.component';
 import { EmptySectionComponent } from './utils/empty-section/empty-section.component';
+import { NewTaskComponent } from './modals/new-task/new-task.component';
+import { NewProjectComponent } from './modals/new-project/new-project.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { EmptySectionComponent } from './utils/empty-section/empty-section.compo
     HomeComponent,
     MyTasksComponent,
     MyProjectsComponent,
-    EmptySectionComponent
+    EmptySectionComponent,
+    NewTaskComponent,
+    NewProjectComponent
   ],
   imports: [
     BrowserModule,
