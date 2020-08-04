@@ -1,0 +1,32 @@
+.header {
+  margin: -24px -24px 14px;
+  background-color: #af5877;
+  color: white;
+  padding: 20px;
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+
+  span {
+    font-size: 12px;
+  }
+}
+
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.form-full-width {
+  width: 100%;
+}
+
+.actions {
+  .btn-pink {
+    float: right;
+    margin-left: 20px;
+  }
+}

@@ -42,6 +42,7 @@ h2 {
 
     p {
       margin: 0px;
+      margin-bottom: 10px;
     }
 
     .date {
@@ -129,5 +130,36 @@ h2 {
 	top:1px;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.btn-cancel {
+	background-color: #edebec;
+	border-radius: 7px;
+	display: inline-block;
+	cursor: pointer;
+	color: #6e6c6c;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	padding: 10px 20px;
+	text-transform: uppercase;
+  border: none;
+
+  &.sm {
+    border-radius: 50%;
+    padding: 5px 15px;
+    font-size: 29px;
+  }
+}
+.btn-cancel:hover {
+	background-color: #dfdbdc;
+}
+.btn-cancel:active {
+	position: relative;
+	top:1px;
+}
+
+/*.mat-form-field-empty.mat-form-field-label {
+  color: #82983b;
+}
+
+.mat-form-field-underline {
+  background-color: #82983b;
+}*/

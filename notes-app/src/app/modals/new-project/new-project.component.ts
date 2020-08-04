@@ -1,27 +1,27 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+/* Angular material imports */
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-
-export interface DialogData {
-  
-}
+import { MatInputModule } from '@angular/material/input';
+/* types call */
+import { Project } from '../../types';
 
 @Component({
   selector: 'app-new-project',
   templateUrl: './new-project.component.html',
   styleUrls: ['./new-project.component.scss']
 })
-export class NewProjectComponent implements OnInit {
+export class NewProjectComponent {
+  anyChanges: boolean = false;
 
   constructor(
     public dialogRef: MatDialogRef<NewProjectComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData
+    @Inject(MAT_DIALOG_DATA) public data: Project
   ) { }
 
-  ngOnInit(): void {
-  }
-
-  closeDialog(): void {
-    this.dialogRef.close();
+  cancel(): void {
+    if (!this.anyChanges) {
+      this.dialogRef.close();
+    }
   }
 
 }

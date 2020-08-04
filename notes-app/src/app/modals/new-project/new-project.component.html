@@ -1,1 +1,21 @@
-<p>new-project works!</p>
+<div class="header">
+  <h1>New Project</h1>
+  <span>Fill out the information below to get started.</span>
+</div>
+<div class="body">
+  <form class="form">
+    <mat-form-field class="form-full-width">
+      <mat-label>Project Name</mat-label>
+      <input matInput placeholder="Project name" value="name">
+    </mat-form-field>
+
+    <mat-form-field class="form-full-width">
+      <mat-label>Description</mat-label>
+      <textarea matInput placeholder="Project description"></textarea>
+    </mat-form-field>
+  </form>
+</div>
+<div class="actions">
+  <button class="btn-cancel" type="button" name="button" (click)="cancel()">Cancel</button>
+  <button class="btn-green" type="button" name="button">Done</button>
+</div>

@@ -1,26 +1,20 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-
-export interface DialogData {
-
-}
+import { Task } from '../../types';
 
 @Component({
   selector: 'app-new-task',
   templateUrl: './new-task.component.html',
   styleUrls: ['./new-task.component.scss']
 })
-export class NewTaskComponent implements OnInit {
+export class NewTaskComponent {
 
   constructor(
     public dialogRef: MatDialogRef<NewTaskComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData
+    @Inject(MAT_DIALOG_DATA) public data: Task
   ) { }
 
-  ngOnInit(): void {
-  }
-
-  closeDialog(): void {
+  cancel(): void {
     this.dialogRef.close();
   }
 

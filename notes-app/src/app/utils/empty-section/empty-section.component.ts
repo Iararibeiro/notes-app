@@ -40,9 +40,9 @@ export class EmptySectionComponent implements OnInit {
 
   onClick() {
     if (this.typeNotice === 'project') {
-      const dialogNewProjectRef = this.dialog.open(NewProjectComponent, { width: '250px' });
+      const dialogNewProjectRef = this.dialog.open(NewProjectComponent, { width: '350px' });
     } else {
-      const dialogNewTaskRef = this.dialog.open(NewTaskComponent, { width: '250px' });
+      const dialogNewTaskRef = this.dialog.open(NewTaskComponent, { width: '350px' });
     }
   }
 }
