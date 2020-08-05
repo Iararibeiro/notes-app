@@ -6,7 +6,7 @@
   <form [formGroup]="taskForm" class="form" (submit)="submit()">
     <mat-form-field class="form-full-width">
       <mat-label>Task Name</mat-label>
-      <input matInput formControlName="title" placeholder="Project name" value="name">
+      <input matInput formControlName="title" placeholder="Task name" value="name">
     </mat-form-field>
 
     <mat-form-field class="form-full-width">
@@ -16,20 +16,21 @@
 
     <mat-form-field class="form-full-width">
       <mat-label>Start Date</mat-label>
-      <input formControlName="startTime" matInput [matDatepicker]="picker">
-      <mat-datepicker-toggle matSuffix [for]="picker">
-        <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-      </mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
+      <input formControlName="startTime" matInput type="datetime-local">
     </mat-form-field>
 
     <mat-form-field class="form-full-width">
       <mat-label>End Date</mat-label>
-      <input formControlName="endTime" matInput [matDatepicker]="picker">
-      <mat-datepicker-toggle matSuffix [for]="picker">
-        <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-      </mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
+      <input formControlName="endTime" matInput type="datetime-local">
+    </mat-form-field>
+
+    <mat-form-field class="form-full-width" *ngIf="projectList.length > 0">
+      <mat-label>Project</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let project of projectList" [value]="project.title">
+          {{project.title}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
 
     <div class="actions">
