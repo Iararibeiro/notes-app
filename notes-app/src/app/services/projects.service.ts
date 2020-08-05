@@ -15,4 +15,8 @@ export class ProjectsService {
   getAll(): Project[] {
     return this.projects;
   }
+
+  addProject(newProject: Project) {
+    this.projects.push(newProject);
+  }
 }

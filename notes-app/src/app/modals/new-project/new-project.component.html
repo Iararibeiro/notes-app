@@ -3,20 +3,32 @@
   <span>Fill out the information below to get started.</span>
 </div>
 <div class="body">
-  <form [formGroup]="projectForm" class="form" (submit)="submit()">
-    <mat-form-field class="form-full-width">
-      <mat-label>Project Name</mat-label>
-      <input matInput formControlName="name" placeholder="Project name" required>
-    </mat-form-field>
+  <ng-container *ngIf="!displaySuccess">
+    <form [formGroup]="projectForm" class="form" (submit)="submit()">
+      <div class="form-fields">
+        <mat-form-field class="form-full-width">
+          <mat-label>Project Name</mat-label>
+          <input matInput formControlName="name" placeholder="Project name" required>
+        </mat-form-field>
 
-    <mat-form-field class="form-full-width">
-      <mat-label>Description</mat-label>
-      <textarea matInput formControlName="description" placeholder="Project description"></textarea>
-    </mat-form-field>
-
-    <div class="actions">
-      <button class="btn-cancel" type="button" name="button" (click)="cancel()">Cancel</button>
-      <button class="btn-green" type="submit" name="button">Done</button>
+        <mat-form-field class="form-full-width">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description" placeholder="Project description"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="actions">
+        <button class="btn-cancel" type="button" name="button" (click)="cancel()">Cancel</button>
+        <button class="btn-green" type="submit" name="button">Done</button>
+      </div>
+    </form>
+  </ng-container>
+  <ng-container *ngIf="displaySuccess">
+    <div class="sucess-message">
+      <img src="./assets/tick.svg" alt="sucess icon">
+      <p>Project {{ projectForm.value.name }} created.</p>
     </div>
-  </form>
+    <div class="actions">
+      <button class="btn-cancel" type="button" name="button" (click)="cancel()">Close</button>
+    </div>
+  </ng-container>
 </div>
