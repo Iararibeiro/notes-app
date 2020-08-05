@@ -11,7 +11,7 @@ export interface Project {
 
 export interface Task {
   title: string;
-  desription: string;
+  description: string;
   project?: Project;
   startTime: Date;
   endTime: Date;

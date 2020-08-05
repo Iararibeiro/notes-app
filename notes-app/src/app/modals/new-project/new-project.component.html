@@ -3,19 +3,20 @@
   <span>Fill out the information below to get started.</span>
 </div>
 <div class="body">
-  <form class="form">
+  <form [formGroup]="projectForm" class="form" (submit)="submit()">
     <mat-form-field class="form-full-width">
       <mat-label>Project Name</mat-label>
-      <input matInput placeholder="Project name" value="name">
+      <input matInput formControlName="name" placeholder="Project name" required>
     </mat-form-field>
 
     <mat-form-field class="form-full-width">
       <mat-label>Description</mat-label>
-      <textarea matInput placeholder="Project description"></textarea>
+      <textarea matInput formControlName="description" placeholder="Project description"></textarea>
     </mat-form-field>
+
+    <div class="actions">
+      <button class="btn-cancel" type="button" name="button" (click)="cancel()">Cancel</button>
+      <button class="btn-green" type="submit" name="button">Done</button>
+    </div>
   </form>
-</div>
-<div class="actions">
-  <button class="btn-cancel" type="button" name="button" (click)="cancel()">Cancel</button>
-  <button class="btn-green" type="button" name="button">Done</button>
 </div>

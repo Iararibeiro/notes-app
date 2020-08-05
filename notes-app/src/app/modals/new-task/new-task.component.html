@@ -3,24 +3,38 @@
   <span>Fill out the information below to get started.</span>
 </div>
 <div class="body">
-  <form class="form">
+  <form [formGroup]="taskForm" class="form" (submit)="submit()">
     <mat-form-field class="form-full-width">
       <mat-label>Task Name</mat-label>
-      <input matInput placeholder="Project name" value="name">
+      <input matInput formControlName="title" placeholder="Project name" value="name">
     </mat-form-field>
 
     <mat-form-field class="form-full-width">
       <mat-label>Description</mat-label>
-      <textarea matInput placeholder="Project description"></textarea>
+      <textarea matInput formControlName="description" placeholder="Project description"></textarea>
     </mat-form-field>
 
     <mat-form-field class="form-full-width">
-      <mat-label>Description</mat-label>
-      <textarea matInput placeholder="Project description"></textarea>
+      <mat-label>Start Date</mat-label>
+      <input formControlName="startTime" matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker">
+        <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+
+    <mat-form-field class="form-full-width">
+      <mat-label>End Date</mat-label>
+      <input formControlName="endTime" matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker">
+        <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div class="actions">
+      <button class="btn-cancel" type="button" name="button" (click)="cancel()">Cancel</button>
+      <button class="btn-pink" type="submit" name="button">Done</button>
+    </div>
   </form>
-</div>
-<div class="actions">
-  <button class="btn-cancel" type="button" name="button" (click)="cancel()">Cancel</button>
-  <button class="btn-pink" type="button" name="button">Done</button>
 </div>
