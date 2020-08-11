@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+/* Services */
+import { ProjectsService } from '../services/projects.service';
 
 @Component({
   selector: 'app-home',
@@ -13,12 +15,21 @@ export class HomeComponent implements OnInit {
 
   displayTasks = false;
   displayProjects = false;
-  
-  constructor() { }
+
+  projects$;
+
+  constructor(
+    private projectService: ProjectsService
+  ) { }
 
   ngOnInit(): void {
     this.setGreeting();
     this.setDate();
+
+    this.projects$ = this.projectService.projectList$.subscribe((list) => {
+      if (list != null && list.length > 0) this.displayProjects = true;
+      console.log(list);
+    });
   }
 
   /* Set the greeting on the home page */

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 /* Types */
 import { Task, Project } from '../types';
 
@@ -7,6 +8,10 @@ import { Task, Project } from '../types';
 })
 export class ProjectsService {
   private projects: Project[];
+
+  private _projectList: BehaviorSubject<Project[]> = new BehaviorSubject(null);
+
+  public projectList$ = this._projectList.asObservable();
 
   constructor() {
     this.projects = [];
@@ -18,5 +23,6 @@ export class ProjectsService {
 
   addProject(newProject: Project) {
     this.projects.push(newProject);
+    this._projectList.next(this.projects);
   }
 }
