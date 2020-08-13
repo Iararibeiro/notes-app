@@ -16,12 +16,10 @@
   </div>
   <div class="projects">
     <h2>Projects</h2>
-    <ng-container *ngIf="displayProjects">
-      <div *ngfor="let project of projects$ | async" class="project">
-        <p>{{ project.name }}</p>
-        <p>{{ project.description }}</p>
-      </div>
-    </ng-container>
+    <div *ngfor="let project of projects$" class="project">
+      <p>{{ project.name }}</p>
+      <p>{{ project.description }}</p>
+    </div>
     <ng-container *ngIf="!displayProjects">
       <app-empty-section [typeNotice]="'project'" [size]="'small'"></app-empty-section>
     </ng-container>

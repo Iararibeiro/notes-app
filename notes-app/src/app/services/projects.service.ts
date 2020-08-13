@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 /* Types */
 import { Task, Project } from '../types';
 
@@ -9,7 +9,7 @@ import { Task, Project } from '../types';
 export class ProjectsService {
   private projects: Project[];
 
-  private _projectList: BehaviorSubject<Project[]> = new BehaviorSubject(null);
+  private _projectList = new Subject();
 
   public projectList$ = this._projectList.asObservable();
 
@@ -18,7 +18,7 @@ export class ProjectsService {
   }
 
   getAll(): Project[] {
-    return this.projects;
+    return this.projectList$;
   }
 
   addProject(newProject: Project) {

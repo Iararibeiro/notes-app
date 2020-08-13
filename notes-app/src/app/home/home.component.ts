@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 /* Services */
 import { ProjectsService } from '../services/projects.service';
 
@@ -7,7 +7,7 @@ import { ProjectsService } from '../services/projects.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   greeting: string;
   date: string;
 
@@ -26,10 +26,17 @@ export class HomeComponent implements OnInit {
     this.setGreeting();
     this.setDate();
 
-    this.projects$ = this.projectService.projectList$.subscribe((list) => {
-      if (list != null && list.length > 0) this.displayProjects = true;
+    this.projectService.projectList$.subscribe(list => {
+      if (list != null && list.length > 0) {
+        this.displayProjects = true;
+        this.projects$ = list;
+      }
       console.log(list);
     });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   /* Set the greeting on the home page */
