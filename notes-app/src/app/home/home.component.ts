@@ -30,13 +30,14 @@ export class HomeComponent implements OnInit, OnDestroy {
       if (list != null && list.length > 0) {
         this.displayProjects = true;
         this.projects$ = list;
+        console.log(this.displayProjects);
+        console.log(this.projects$);
       }
-      console.log(list);
     });
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    //this.subscription.unsubscribe();
   }
 
   /* Set the greeting on the home page */

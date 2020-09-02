@@ -14,6 +14,7 @@ import { Task, Project } from '../../types';
 })
 export class NewTaskComponent implements OnInit {
   anyChanges: boolean = false;
+  displaySuccess: boolean = false;
   projectList: ReadonlyArray<Project>;
 
   taskForm = new FormGroup({
@@ -31,7 +32,11 @@ export class NewTaskComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.projectList = this.projectService.getAll();
+    this.projectService.projectList$.subscribe(list => {
+      this.projectList = list;
+    })
+
+    this.projectService.getAll();
   }
 
   cancel(): void {
@@ -39,7 +44,9 @@ export class NewTaskComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.taskForm);
+    if (this.taskForm.valid) {
+      this.displaySuccess = true;
+    }
   }
 
 }

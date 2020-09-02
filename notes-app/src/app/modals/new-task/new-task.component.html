@@ -3,39 +3,50 @@
   <span>Fill out the information below to get started.</span>
 </div>
 <div class="body">
-  <form [formGroup]="taskForm" class="form" (submit)="submit()">
-    <mat-form-field class="form-full-width">
-      <mat-label>Task Name</mat-label>
-      <input matInput formControlName="title" placeholder="Task name" value="name">
-    </mat-form-field>
+  <ng-container *ngIf="!displaySuccess">
+    <form [formGroup]="taskForm" class="form" (submit)="submit()">
+      <mat-form-field class="form-full-width">
+        <mat-label>Task Name</mat-label>
+        <input matInput formControlName="title" placeholder="Task name" value="name">
+      </mat-form-field>
 
-    <mat-form-field class="form-full-width">
-      <mat-label>Description</mat-label>
-      <textarea matInput formControlName="description" placeholder="Project description"></textarea>
-    </mat-form-field>
+      <mat-form-field class="form-full-width">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description" placeholder="Task description"></textarea>
+      </mat-form-field>
 
-    <mat-form-field class="form-full-width">
-      <mat-label>Start Date</mat-label>
-      <input formControlName="startTime" matInput type="datetime-local">
-    </mat-form-field>
+      <mat-form-field class="form-full-width">
+        <mat-label>Start Date</mat-label>
+        <input formControlName="startTime" matInput type="datetime-local">
+      </mat-form-field>
 
-    <mat-form-field class="form-full-width">
-      <mat-label>End Date</mat-label>
-      <input formControlName="endTime" matInput type="datetime-local">
-    </mat-form-field>
+      <mat-form-field class="form-full-width">
+        <mat-label>End Date</mat-label>
+        <input formControlName="endTime" matInput type="datetime-local">
+      </mat-form-field>
 
-    <mat-form-field class="form-full-width" *ngIf="projectList.length > 0">
-      <mat-label>Project</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let project of projectList" [value]="project.title">
-          {{project.title}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+      <mat-form-field class="form-full-width" *ngIf="projectList.length > 0">
+        <mat-label>Project</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let project of projectList" [value]="project.title">
+            {{project.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-    <div class="actions">
-      <button class="btn-cancel" type="button" name="button" (click)="cancel()">Cancel</button>
-      <button class="btn-pink" type="submit" name="button">Done</button>
+      <div class="actions">
+        <button class="btn-cancel" type="button" name="button" (click)="cancel()">Cancel</button>
+        <button class="btn-pink" type="submit" name="button">Done</button>
+      </div>
+    </form>
+  </ng-container>
+  <ng-container *ngIf="displaySuccess">
+    <div class="sucess-message">
+      <img src="./assets/tick.svg" alt="sucess icon">
+      <p>Task {{ taskForm.value.title }} created.</p>
     </div>
-  </form>
+    <div class="actions">
+      <button class="btn-cancel" type="button" name="button" (click)="cancel()">Close</button>
+    </div>
+  </ng-container>
 </div>

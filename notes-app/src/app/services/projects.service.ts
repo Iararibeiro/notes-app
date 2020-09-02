@@ -9,7 +9,7 @@ import { Task, Project } from '../types';
 export class ProjectsService {
   private projects: Project[];
 
-  private _projectList = new Subject();
+  private _projectList = new BehaviorSubject<Project[]>(undefined);
 
   public projectList$ = this._projectList.asObservable();
 
@@ -17,8 +17,8 @@ export class ProjectsService {
     this.projects = [];
   }
 
-  getAll(): Project[] {
-    return this.projectList$;
+  getAll() {
+    this._projectList.next(this.projects);
   }
 
   addProject(newProject: Project) {
