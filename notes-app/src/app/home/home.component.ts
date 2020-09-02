@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   displayTasks = false;
   displayProjects = false;
 
-  projects$;
+  projects: Project[] = [];
 
   constructor(
     private projectService: ProjectsService
@@ -29,11 +29,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.projectService.projectList$.subscribe(list => {
       if (list != null && list.length > 0) {
         this.displayProjects = true;
-        this.projects$ = list;
-        console.log(this.displayProjects);
-        console.log(this.projects$);
+        this.projects = list;
       }
     });
+    this.projectService.getAll();
   }
 
   ngOnDestroy() {
