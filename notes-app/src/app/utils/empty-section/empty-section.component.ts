@@ -33,9 +33,9 @@ export class EmptySectionComponent implements OnInit {
 
   getSmallButtonClass() {
     if (this.typeNotice === 'project') {
-      return "btn-green sm";
+      return "btn-green icon";
     }
-    return "btn-pink sm";
+    return "btn-pink icon";
   }
 
   onClick() {

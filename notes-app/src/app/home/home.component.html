@@ -7,18 +7,27 @@
   <div class="stats">
   </div>
   <div class="ongoing">
+
     <h2>On going tasks</h2>
     <ng-container *ngIf="displayTasks">
+      <ng-container *ngIf="tasks.length > 0">
+        <button class="btn-gray sm" type="button" name="button" (click)="createTask()">new task</button>
+      </ng-container>
     </ng-container>
     <ng-container *ngIf="!displayTasks">
       <app-empty-section [typeNotice]="'task'" [size]="'small'"></app-empty-section>
     </ng-container>
   </div>
   <div class="projects">
-    <h2>Projects</h2>
+    <div class="heading">
+      <h2>Projects</h2>
+      <ng-container *ngIf="projects.length > 0">
+        <button class="btn-gray sm" type="button" name="button" (click)="createProject()">new project</button>
+      </ng-container>
+    </div>
     <div *ngFor="let project of projects" class="project">
-      <p>{{ project.name }}</p>
-      <p>{{ project.description }}</p>
+      <p class="name">{{ project.name }}</p>
+      <p class="description">{{ project.description }}</p>
     </div>
     <ng-container *ngIf="!displayProjects">
       <app-empty-section [typeNotice]="'project'" [size]="'small'"></app-empty-section>

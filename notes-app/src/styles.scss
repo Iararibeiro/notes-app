@@ -64,7 +64,7 @@ h2 {
 	text-transform: uppercase;
   border: none;
 
-  &.sm {
+  &.icon {
     border-radius: 50%;
     padding: 5px 15px;
     font-size: 29px;
@@ -90,7 +90,7 @@ h2 {
 	text-transform: uppercase;
   border: none;
 
-  &.sm {
+  &.icon {
     border-radius: 50%;
     padding: 5px 15px;
     font-size: 29px;
@@ -116,7 +116,7 @@ h2 {
 	text-transform: uppercase;
   border: none;
 
-  &.sm {
+  &.icon {
     border-radius: 50%;
     padding: 5px 15px;
     font-size: 29px;
@@ -126,6 +126,32 @@ h2 {
 	background-color: #7199e1;
 }
 .btn-blue:active {
+	position: relative;
+	top:1px;
+}
+
+.btn-gray {
+	background-color: #dfdbdc;
+	border-radius: 7px;
+	display: inline-block;
+	cursor: pointer;
+	color: #6e6c6c;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	padding: 10px 20px;
+	text-transform: uppercase;
+  border: none;
+
+  &.icon {
+    border-radius: 50%;
+    padding: 5px 15px;
+    font-size: 29px;
+  }
+}
+.btn-cancel:hover {
+	background-color: #dfdbdc;
+}
+.btn-cancel:active {
 	position: relative;
 	top:1px;
 }
@@ -142,7 +168,7 @@ h2 {
 	text-transform: uppercase;
   border: none;
 
-  &.sm {
+  &.icon {
     border-radius: 50%;
     padding: 5px 15px;
     font-size: 29px;

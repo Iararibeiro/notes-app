@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 /* Services */
 import { ProjectsService } from '../services/projects.service';
+/* Types */
+import { Task, Project } from '../types';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +19,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   displayProjects = false;
 
   projects: Project[] = [];
+  tasks;
 
   constructor(
     private projectService: ProjectsService
@@ -58,5 +61,15 @@ export class HomeComponent implements OnInit, OnDestroy {
     let currentDate = new Date();
     let month = this.months[currentDate.getMonth()];
     this.date = `${currentDate.getDate()} ${month} ${currentDate.getFullYear()}`;
+  }
+
+  /* Open create a new project dialog */
+  createProject() {
+
+  }
+
+  /*Open create a new task dialog*/
+  createTask() {
+
   }
 }

@@ -7,6 +7,7 @@ export interface noticeType {
 export interface Project {
   title: string;
   description: string;
+  tasks?: Task[];
 }
 
 export interface Task {
