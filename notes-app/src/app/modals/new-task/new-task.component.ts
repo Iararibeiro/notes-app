@@ -34,7 +34,7 @@ export class NewTaskComponent implements OnInit {
   ngOnInit() {
     this.projectService.projectList$.subscribe(list => {
       this.projectList = list;
-    })
+    });
 
     this.projectService.getAll();
   }
@@ -46,6 +46,7 @@ export class NewTaskComponent implements OnInit {
   submit() {
     if (this.taskForm.valid) {
       this.displaySuccess = true;
+      this.projectService.addTask(this.taskForm.value, this.taskForm.value.project);
     }
   }
 

@@ -14,7 +14,7 @@ export class ProjectsService {
   private _taskList = new BehaviorSubject<Task[]>(undefined);
 
   public projectList$ = this._projectList.asObservable();
-  public taskLisy$ = this._taskList.asObservable();
+  public taskList$ = this._taskList.asObservable();
 
   constructor() {
     this.projects = [];
@@ -23,6 +23,7 @@ export class ProjectsService {
 
   /* get all the current projects */
   getAll() {
+    this._taskList.next(this.tasks);
     this._projectList.next(this.projects);
   }
 

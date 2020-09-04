@@ -7,12 +7,20 @@
   <div class="stats">
   </div>
   <div class="ongoing">
-
-    <h2>On going tasks</h2>
-    <ng-container *ngIf="displayTasks">
+    <div class="heading">
+      <h2>On going tasks</h2>
       <ng-container *ngIf="tasks.length > 0">
-        <button class="btn-gray sm" type="button" name="button" (click)="createTask()">new task</button>
+        <button class="btn-gray sm" type="button" name="button" (click)="createProject()">new task</button>
       </ng-container>
+    </div>
+    <ng-container *ngIf="displayTasks">
+      <div *ngFor="let task of tasks" class="task">
+        <p class="name">{{ task.title }}</p>
+        <p class="description">{{ task.description }}</p>
+        <p class="project">{{task.project}}</p>
+        <p class="start">{{task.startTime}}</p>
+        <p class="end">{{task.endTime}}</p>
+      </div>
     </ng-container>
     <ng-container *ngIf="!displayTasks">
       <app-empty-section [typeNotice]="'task'" [size]="'small'"></app-empty-section>

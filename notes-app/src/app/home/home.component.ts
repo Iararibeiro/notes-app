@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   displayProjects = false;
 
   projects: Project[] = [];
-  tasks;
+  tasks: Task[] = [];
 
   constructor(
     private projectService: ProjectsService
@@ -35,6 +35,14 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.projects = list;
       }
     });
+
+    this.projectService.taskList$.subscribe(tasks => {
+      if (tasks != null && tasks.length > 0) {
+        this.displayTasks = true;
+        this.tasks = tasks;
+      }
+    });
+
     this.projectService.getAll();
   }
 
