@@ -22,12 +22,11 @@
 }
 
 .project {
-  background-color: #82983b;
+  background-color: #fbfbfb;
   width: 150px;
   height: 150px;
   border-radius: 10px;
   padding: 20px;
-  color: white;
   cursor: pointer;
 
   &:hover {
@@ -37,9 +36,26 @@
   }
 
   .name {
-    //color: #566525;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 12px;
+    font-weight: bolder;
+    margin: 0px 0px 10px;
+  }
+
+  .description {
+    font-size: 12px;
+    text-transform: none;
+    opacity: 0.6;
+  }
+
+  .progress {
+    height: 6px;
+    width: 100%;
+    background-color: #bada55;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+
+  .tasks {
+    font-size: 12px;
   }
 }

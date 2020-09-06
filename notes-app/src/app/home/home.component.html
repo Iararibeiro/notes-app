@@ -36,6 +36,8 @@
     <div *ngFor="let project of projects" class="project">
       <p class="name">{{ project.name }}</p>
       <p class="description">{{ project.description }}</p>
+      <div class="progress"></div>
+      <p class="tasks">Tasks</p>
     </div>
     <ng-container *ngIf="!displayProjects">
       <app-empty-section [typeNotice]="'project'" [size]="'small'"></app-empty-section>

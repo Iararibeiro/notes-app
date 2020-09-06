@@ -8,6 +8,13 @@
       <app-empty-section [typeNotice]="'project'" [size]="'big'"></app-empty-section>
     </ng-container>
     <ng-container *ngIf="projects.length > 0">
+      <div *ngFor="let project of projects" class="project">
+        <p class="name">{{ project.name }}</p>
+        <p class="description">{{ project.description }}</p>
+        <div class="progress"></div>
+        <p class="tasks">Tasks</p>
+
+      </div>
     </ng-container>
   </div>
 </div>
