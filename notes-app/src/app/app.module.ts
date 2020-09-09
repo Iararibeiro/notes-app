@@ -20,6 +20,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
+import { ProjectCardComponent } from './utils/project-card/project-card.component';
+import { TaskCardComponent } from './utils/task-card/task-card.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { MatSelectModule } from '@angular/material/select';
     MyProjectsComponent,
     EmptySectionComponent,
     NewTaskComponent,
-    NewProjectComponent
+    NewProjectComponent,
+    ProjectCardComponent,
+    TaskCardComponent
   ],
   imports: [
     BrowserModule,
