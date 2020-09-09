@@ -1,0 +1,46 @@
+.project {
+    background-color: #fbfbfb;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+  
+    &:hover {
+        -webkit-box-shadow: 10px 10px 85px -60px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 85px -60px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 85px -60px rgba(0,0,0,0.75);
+    }
+
+    &.small {
+        width: 150px;
+        height: 150px;
+    }
+
+    &.medium {
+        width: 200px;
+        height: 250px;
+    }
+  
+    .name {
+        font-size: 12px;
+        font-weight: bolder;
+        margin: 0px 0px 10px;
+    }
+  
+    .description {
+        font-size: 12px;
+        text-transform: none;
+        opacity: 0.6;
+    }
+  
+    .progress {
+        height: 6px;
+        width: 100%;
+        background-color: #bada55;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+  
+    .tasks {
+        font-size: 12px;
+    }
+  }

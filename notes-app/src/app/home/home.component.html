@@ -15,11 +15,12 @@
     </div>
     <ng-container *ngIf="displayTasks">
       <div *ngFor="let task of tasks" class="task">
-        <p class="name">{{ task.title }}</p>
+        <!--<p class="name">{{ task.title }}</p>
         <p class="description">{{ task.description }}</p>
         <p class="project">{{task.project}}</p>
         <p class="start">{{task.startTime}}</p>
-        <p class="end">{{task.endTime}}</p>
+        <p class="end">{{task.endTime}}</p>-->
+        <app-task-card></app-task-card>
       </div>
     </ng-container>
     <ng-container *ngIf="!displayTasks">
@@ -33,11 +34,11 @@
         <button class="btn-gray sm" type="button" name="button" (click)="createProject()">new project</button>
       </ng-container>
     </div>
-    <div *ngFor="let project of projects" class="project">
-      <p class="name">{{ project.name }}</p>
-      <p class="description">{{ project.description }}</p>
-      <div class="progress"></div>
-      <p class="tasks">Tasks</p>
+    <div *ngFor="let project of projects">
+      <app-project-card
+        [size]="'small'"
+        [project]="project"
+      ></app-project-card>
     </div>
     <ng-container *ngIf="!displayProjects">
       <app-empty-section [typeNotice]="'project'" [size]="'small'"></app-empty-section>

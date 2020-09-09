@@ -4,6 +4,10 @@ export interface noticeType {
   type: string;
 }
 
+export interface cardType {
+  type: string;
+}
+
 export interface Project {
   title: string;
   description: string;
