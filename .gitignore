@@ -1,2 +1,8 @@
 .DS_Store
 .env
+
+#dont include build and documentation
+/build
+/documentation
+/node_modules
+/logs
