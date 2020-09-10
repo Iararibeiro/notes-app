@@ -17,7 +17,10 @@ export class ProjectsService {
   public taskList$ = this._taskList.asObservable();
 
   constructor() {
-    this.projects = [];
+    this.projects = [
+      { title: "Project A", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus, metus eu lacinia mattis, metus ex molestie augue, a egestas ipsum nisi vel justo.", tasks: []},
+      { title: "Project B", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus, metus eu lacinia mattis.", tasks: []}
+    ];
     this.tasks = [];
   }
 

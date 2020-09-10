@@ -1,16 +1,24 @@
 <ng-container *ngIf="size === 'small'">
     <div class="project small">
-        <p class="name">{{ project.title }}</p>
-        <p class="description">{{ project.description }}</p>
-        <div class="progress"></div>
+        <p class="title">{{ project.title }}</p>
+        <!--<p class="description">{{ project.description }}</p>-->
+        <div class="progress">
+            <p class="title">Progress</p>
+            <div class="progress-bar"></div>
+            <div class="bar" [ngStyle]="{'width': progress + '%'}"></div>
+        </div>
         <p class="tasks">Tasks</p>
     </div>
 </ng-container>
 <ng-container *ngIf="size === 'medium'">
     <div class="project medium">
-        <p class="name">{{ project.title }}</p>
+        <p class="title">{{ project.title }}</p>
         <p class="description">{{ project.description }}</p>
-        <div class="progress"></div>
+        <div class="progress">
+            <p class="title">Progress</p>
+            <div class="progress-bar"></div>
+            <div class="bar" [ngStyle]="{'width': progress + '%'}"></div>
+        </div>
         <p class="tasks">Tasks</p>
     </div>
 </ng-container>
