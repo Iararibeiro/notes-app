@@ -1,4 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+/* Compoenents */
+import { NewProjectComponent } from '../modals/new-project/new-project.component';
+import { NewTaskComponent } from '../modals/new-task/new-task.component';
 /* Services */
 import { ProjectsService } from '../services/projects.service';
 /* Types */
@@ -22,7 +26,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   tasks: Task[] = [];
 
   constructor(
-    private projectService: ProjectsService
+    private projectService: ProjectsService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -73,11 +78,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   /* Open create a new project dialog */
   createProject() {
-
+    const dialogNewProjectRef = this.dialog.open(NewProjectComponent, { width: '350px' });
   }
 
-  /*Open create a new task dialog*/
+  /* Open create a new task dialog */
   createTask() {
-
+    const dialogNewTaskRef = this.dialog.open(NewTaskComponent, { width: '350px' });
   }
 }

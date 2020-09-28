@@ -31,6 +31,10 @@ export class EmptySectionComponent implements OnInit {
     }
   }
 
+  /**
+   * Get the class of the small button, buttons are different depending if it
+   * is a project or a class
+   */
   getSmallButtonClass() {
     if (this.typeNotice === 'project') {
       return "btn-green icon";
@@ -38,6 +42,9 @@ export class EmptySectionComponent implements OnInit {
     return "btn-pink icon";
   }
 
+  /**
+   * Open the modal when the user clicks in the component button
+   */
   onClick() {
     if (this.typeNotice === 'project') {
       const dialogNewProjectRef = this.dialog.open(NewProjectComponent, { width: '350px' });

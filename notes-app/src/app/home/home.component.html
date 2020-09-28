@@ -13,18 +13,19 @@
         <button class="btn-gray sm" type="button" name="button" (click)="createProject()">new task</button>
       </ng-container>
     </div>
-    <ng-container *ngIf="displayTasks">
-      <div *ngFor="let task of tasks" class="task">
-        <!--<p class="name">{{ task.title }}</p>
-        <p class="description">{{ task.description }}</p>
-        <p class="project">{{task.project}}</p>
-        <p class="start">{{task.startTime}}</p>
-        <p class="end">{{task.endTime}}</p>-->
-        <app-task-card></app-task-card>
+    <div class="task-list" *ngIf="displayTasks">
+      <div *ngFor="let task of tasks">
+        <app-task-card 
+          [size]="'small'" 
+          [task]="task">
+        </app-task-card>
       </div>
-    </ng-container>
+    </div>
     <ng-container *ngIf="!displayTasks">
-      <app-empty-section [typeNotice]="'task'" [size]="'small'"></app-empty-section>
+      <app-empty-section 
+        [typeNotice]="'task'" 
+        [size]="'small'">
+      </app-empty-section>
     </ng-container>
   </div>
   <div class="projects">
@@ -34,11 +35,13 @@
         <button class="btn-gray sm" type="button" name="button" (click)="createProject()">new project</button>
       </ng-container>
     </div>
-    <div *ngFor="let project of projects">
-      <app-project-card
-        [size]="'small'"
-        [project]="project"
-      ></app-project-card>
+    <div class="project-list">
+      <div *ngFor="let project of projects">
+        <app-project-card
+          [size]="'small'"
+          [project]="project"
+        ></app-project-card>
+      </div>
     </div>
     <ng-container *ngIf="!displayProjects">
       <app-empty-section [typeNotice]="'project'" [size]="'small'"></app-empty-section>

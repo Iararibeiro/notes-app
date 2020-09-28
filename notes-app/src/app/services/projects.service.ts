@@ -38,10 +38,8 @@ export class ProjectsService {
 
   /* Add a new task with or without a project */
   addTask(newTask: Task, projectName: string = null) {
-    if (!projectName) {
-      this.tasks.push(newTask);
-      this._taskList.next(this.tasks);
-    }
+    this.tasks.push(newTask);
+    this._taskList.next(this.tasks);
 
     this.projects = this.projects.map(project => {
       if (project.title === projectName) {

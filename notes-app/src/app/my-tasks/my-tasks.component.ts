@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { ProjectsService } from '../services/projects.service';
 
 @Component({
   selector: 'app-my-tasks',
@@ -14,11 +15,20 @@ export class MyTasksComponent implements OnInit, AfterViewInit {
 
   tasks = [];
 
-  constructor() { }
+  constructor(
+    private projectService: ProjectsService
+  ) { }
 
   ngOnInit(): void {
     this.setDate();
     this.dayHours = Array(24).fill(0).map((x,i)=>(i));
+
+    this.projectService.taskList$.subscribe(list => {
+      console.log(list);
+      if (list != null && list.length > 0) {
+        this.tasks = list;
+      }
+    });
   }
 
   ngAfterViewInit() {

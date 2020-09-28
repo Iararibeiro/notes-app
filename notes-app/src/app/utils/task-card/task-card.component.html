@@ -1,1 +1,27 @@
-<p>task-card works!</p>
+<ng-container *ngIf="size === 'small'">
+    <div class="task small">
+        <p class="tite">{{ task.title }}</p>
+        <p class="status">{{ task.status }}</p>
+        <p class="project">{{task.project}}</p>
+        <p class="start">{{task.startTime}}</p>
+        <p class="end">{{task.endTime}}</p>
+    </div>
+</ng-container>
+<ng-container *ngIf="size === 'medium'">
+    <div class="task medium">
+        <p class="tite">{{ task.title }}</p>
+        <p class="status">{{ task.status }}</p>
+        <p class="project">{{task.project}}</p>
+        <p class="start">{{task.startTime}}</p>
+        <p class="end">{{task.endTime}}</p>
+    </div>
+</ng-container>
+<ng-container *ngIf="size === 'big'">
+    <div class="task big">
+        <p class="tite">{{ task.title }}</p>
+        <p class="status">{{ task.status }}</p>
+        <p class="project">{{task.project}}</p>
+        <p class="start">{{task.startTime}}</p>
+        <p class="end">{{task.endTime}}</p>
+    </div>
+</ng-container>

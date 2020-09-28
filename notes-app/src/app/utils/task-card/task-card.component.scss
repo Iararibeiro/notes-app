@@ -1,0 +1,38 @@
+.task {
+    background-color: #fbfbfb;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+  
+    &:hover {
+        -webkit-box-shadow: 10px 10px 85px -60px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 85px -60px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 85px -60px rgba(0,0,0,0.75);
+    }
+
+    &.small {
+        width: 150px;
+        height: 150px;
+        float: left;
+        margin: 0px 20px 20px 0px;
+    }
+
+    &.medium {
+        width: 200px;
+        height: 250px;
+    }
+
+    .title {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: bolder;
+        margin: 0px 0px 10px;
+    }
+  
+    .description {
+        font-size: 12px;
+        text-transform: none;
+        text-align: justify;
+        opacity: 0.6;
+    }
+}
