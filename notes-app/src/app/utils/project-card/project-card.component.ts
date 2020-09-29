@@ -20,7 +20,7 @@ export class ProjectCardComponent implements OnInit{
 
   getProjectProgress() {
     if (this.project.tasks.length > 0) {
-      let completeTasks = this.project.tasks.filter(task => task.status === 'complete');
+      let completeTasks = this.project.tasks.filter(task => task.status === 'DONE');
       this.progress = (completeTasks.length / (this.project.tasks.length)) * 100;
     }
     
