@@ -1,6 +1,6 @@
 <ng-container *ngIf="size === 'small'">
     <div class="task small">
-        <p class="tite">{{ task.title }}</p>
+        <p class="title">{{ task.title }}</p>
         <p class="status">{{ task.status }}</p>
         <p class="project">{{task.project}}</p>
         <p class="start">{{task.startTime}}</p>
@@ -9,7 +9,8 @@
 </ng-container>
 <ng-container *ngIf="size === 'medium'">
     <div class="task medium">
-        <p class="tite">{{ task.title }}</p>
+        <p class="title">{{ task.title }}</p>
+        <p class="description">{{ task.description }}</p>
         <p class="status">{{ task.status }}</p>
         <p class="project">{{task.project}}</p>
         <p class="start">{{task.startTime}}</p>
@@ -18,7 +19,8 @@
 </ng-container>
 <ng-container *ngIf="size === 'big'">
     <div class="task big">
-        <p class="tite">{{ task.title }}</p>
+        <p class="title">{{ task.title }}</p>
+        <p class="description">{{ task.description }}</p>
         <p class="status">{{ task.status }}</p>
         <p class="project">{{task.project}}</p>
         <p class="start">{{task.startTime}}</p>

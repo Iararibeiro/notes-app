@@ -31,9 +31,6 @@ export class NewTaskComponent implements OnInit {
       startTime: new FormControl(new Date()),
       endTime: new FormControl(new Date())
     });
-
-    console.log(this.taskForm);
-  
   }
 
   ngOnInit() {

@@ -18,13 +18,16 @@ export class TaskCardComponent implements OnInit {
   ngOnInit(): void {
     this.formatStart();
     this.formatEnd(); 
+
+    if (this.start === this.end) {
+
+    }
   }
 
   private formatStart() {
-    console.log(this.task.startTime);
-    if (this.task.startTime) {
-      
-    }
+      let startDate = new Date(this.task.startTime);
+      let endDate = new Date(this.task.endTime);
+      console.log(endDate.getTime() - startDate.getTime());
   }
 
   private formatEnd() {
