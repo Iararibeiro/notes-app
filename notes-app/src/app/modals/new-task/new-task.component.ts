@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 /* Angular material imports */
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 /* Services */
 import { ProjectsService } from '../../services/projects.service';
 /* Types */
@@ -17,19 +17,24 @@ export class NewTaskComponent implements OnInit {
   displaySuccess: boolean = false;
   projectList: ReadonlyArray<Project>;
 
-  taskForm = new FormGroup({
-    title: new FormControl(''),
-    description: new FormControl(''),
-    project: new FormControl(''),
-    startTime: new FormControl(''),
-    endTime: new FormControl('')
-  });
+  taskForm: FormGroup;
 
   constructor(
     private projectService: ProjectsService,
     public dialogRef: MatDialogRef<NewTaskComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Task
-  ) { }
+  ) { 
+    this.taskForm = new FormGroup({
+      title: new FormControl(''),
+      description: new FormControl(''),
+      project: new FormControl(''),
+      startTime: new FormControl(new Date()),
+      endTime: new FormControl(new Date())
+    });
+
+    console.log(this.taskForm);
+  
+  }
 
   ngOnInit() {
     this.projectService.projectList$.subscribe(list => {

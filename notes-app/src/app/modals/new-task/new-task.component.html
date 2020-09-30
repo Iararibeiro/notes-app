@@ -17,12 +17,16 @@
 
       <mat-form-field class="form-full-width">
         <mat-label>Start Date</mat-label>
-        <input formControlName="startTime" matInput type="datetime-local">
+        <input matInput formControlName="startTime" [matDatepicker]="startdate" autocomplete="off" placeholder="Start Date">
+        <mat-datepicker-toggle matSuffix [for]="startdate"></mat-datepicker-toggle>
+        <mat-datepicker #startdate color="primary"></mat-datepicker>
       </mat-form-field>
 
       <mat-form-field class="form-full-width">
         <mat-label>End Date</mat-label>
-        <input formControlName="endTime" matInput type="datetime-local">
+        <input matInput formControlName="endTime" [matDatepicker]="enddate" autocomplete="off" placeholder="End Date">
+        <mat-datepicker-toggle matSuffix [for]="enddate"></mat-datepicker-toggle>
+        <mat-datepicker #enddate color="primary"></mat-datepicker>
       </mat-form-field>
 
       <mat-form-field class="form-full-width" *ngIf="projectList.length > 0">
