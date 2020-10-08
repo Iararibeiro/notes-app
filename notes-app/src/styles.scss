@@ -198,10 +198,17 @@ h2 {
   }
 }
 
-/*.mat-form-field-empty.mat-form-field-label {
-  color: #82983b;
-}
+/* icon styles */
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
 
-.mat-form-field-underline {
-  background-color: #82983b;
-}*/
+/* Rules for using icons as black on a light background. */
+.material-icons.md-gray { color: #6e6c6c; }
+.material-icons.md-gray.md-inactive { color: #dfdbdc; }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }

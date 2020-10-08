@@ -1,10 +1,13 @@
 <ng-container *ngIf="size === 'small'">
     <div class="task small">
-        <p class="title">{{ task.title }}</p>
-        <p class="status">{{ task.status }}</p>
-        <p class="project">{{task.project}}</p>
-        <p class="start">{{task.startTime}}</p>
-        <p class="end">{{task.endTime}}</p>
+        <div class="left-content">
+            <p class="title">{{ task.title }} - <span class="project">{{ task.project }}</span></p>
+            <p class="description">{{ task.description }}</p>
+        </div>
+        <div class="right-content">
+            <span class="material-icons md-gray">check_circle</span>
+            <span class="material-icons md-gray">radio_button_unchecked</span>
+        </div>
     </div>
 </ng-container>
 <ng-container *ngIf="size === 'medium'">
