@@ -5,7 +5,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 /* Services */
 import { ProjectsService } from '../../services/projects.service';
 /* Types */
-import { Task, Project } from '../../types';
+import { Task, Project, status } from '../../types';
 
 @Component({
   selector: 'app-new-task',

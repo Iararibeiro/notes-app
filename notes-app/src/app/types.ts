@@ -21,7 +21,7 @@ export enum status {
 
 export interface Task {
   title: string;
-  status?: status;
+  status: status;
   description: string;
   project?: Project;
   startTime: Date;

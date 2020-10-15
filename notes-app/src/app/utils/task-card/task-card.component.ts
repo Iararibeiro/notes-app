@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Task } from 'src/app/types';
+import { Task, status } from 'src/app/types';
 
 @Component({
   selector: 'app-task-card',
@@ -18,6 +18,10 @@ export class TaskCardComponent implements OnInit {
   ngOnInit(): void {
     this.formatStart();
     this.formatEnd(); 
+    
+    if (!this.task.status) {
+      this.task.status = status.NotStarted;
+    }
 
     if (this.start === this.end) {
 

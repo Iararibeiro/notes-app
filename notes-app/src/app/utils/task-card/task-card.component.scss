@@ -19,6 +19,20 @@
         .right-content {
             float: right;
             width: 24px;
+
+            .checked {
+                display: none;
+            }
+
+            &:hover {
+                .checked {
+                    display: block;
+                }
+
+                .unchecked {
+                    display: none;
+                }
+            }
         }
 
         .left-content {

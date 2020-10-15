@@ -5,8 +5,11 @@
             <p class="description">{{ task.description }}</p>
         </div>
         <div class="right-content">
-            <span class="material-icons md-gray">check_circle</span>
-            <span class="material-icons md-gray">radio_button_unchecked</span>
+            <!--<div [ngClass]="task.status==='DONE' ? 'done' : 'wip'">-->
+            <div *ngIf="task.status !== 'DONE'">
+                <span class="material-icons md-gray checked">check_circle</span>
+                <span class="material-icons md-gray unchecked">radio_button_unchecked</span>    
+            </div>
         </div>
     </div>
 </ng-container>
