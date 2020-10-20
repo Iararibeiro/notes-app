@@ -6,7 +6,7 @@ import { NewTaskComponent } from '../modals/new-task/new-task.component';
 /* Services */
 import { ProjectsService } from '../services/projects.service';
 /* Types */
-import { Task, Project } from '../types';
+import { Task, Project, status } from '../types';
 
 @Component({
   selector: 'app-home',
@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.projectService.taskList$.subscribe(tasks => {
       if (tasks != null && tasks.length > 0) {
         this.displayTasks = true;
-        this.tasks = tasks;
+        this.tasks = tasks.filter(task => task.status !== status.Done);
       }
     });
 
@@ -84,5 +84,14 @@ export class HomeComponent implements OnInit, OnDestroy {
   /* Open create a new task dialog */
   createTask() {
     const dialogNewTaskRef = this.dialog.open(NewTaskComponent, { width: '350px' });
+  }
+
+  /**Update a task status */
+  updateTask(event) {
+    this.tasks = this.tasks.filter(task => task.title !== event.title);
+    
+    if (this.tasks.length === 0) {
+      this.displayTasks = false;
+    }
   }
 }

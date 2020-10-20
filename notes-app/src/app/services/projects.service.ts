@@ -49,4 +49,14 @@ export class ProjectsService {
     });
     this._projectList.next(this.projects);
   }
+
+  /** Update Task */
+  updateTask(currentTask: Task) {
+    this.tasks = this.tasks.map(task => {
+      if (task.title === currentTask.title) {
+        task.status = currentTask.status;
+      }
+      return task;
+    })
+  };
 }

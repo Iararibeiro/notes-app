@@ -17,7 +17,8 @@
       <div *ngFor="let task of tasks">
         <app-task-card 
           [size]="'small'" 
-          [task]="task">
+          [task]="task"
+          (status)="updateTask($event)">
         </app-task-card>
       </div>
     </div>
