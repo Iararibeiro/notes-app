@@ -7,7 +7,7 @@ import { ProjectsService } from '../services/projects.service';
   styleUrls: ['./my-tasks.component.scss']
 })
 export class MyTasksComponent implements OnInit, AfterViewInit {
-  calendarView: boolean = false;
+  calendarView: boolean = true;
   date: string;
 
   dayHours = [];

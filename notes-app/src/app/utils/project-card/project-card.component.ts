@@ -10,12 +10,17 @@ export class ProjectCardComponent implements OnInit{
   @Input() size: string;
   @Input() project: Project;
 
-  progress: number = 40;
+  progress: number = 0;
 
   constructor() { }
 
   ngOnInit() {
     this.getProjectProgress();
+    console.log(this.project.tasks.length);
+    if (this.project.tasks.length === undefined) {
+      this.project.tasks = [];
+    }
+    console.log(this.project.tasks);
   }
 
   getProjectProgress() {

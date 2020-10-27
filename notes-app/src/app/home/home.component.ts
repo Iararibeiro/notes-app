@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.setDate();
 
     this.projectService.projectList$.subscribe(list => {
+      console.log(list);
       if (list != null && list.length > 0) {
         this.displayProjects = true;
         this.projects = list;
